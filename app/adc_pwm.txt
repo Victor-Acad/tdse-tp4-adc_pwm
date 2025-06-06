@@ -1,0 +1,15 @@
+------------------------------------------------------------------------------------------------
+
+ADC + PWM.
+
+- Modificamos la tarea del PWM en el archivo 'task_pwm.c' para que cambie el valor del
+registro CCR del PWM en función de la lectura del potenciómetro convertida por el ADC.
+
+- Siendo que el ADC es de 12 bits, su lectura va del 0 al 4095; mientras que los registros
+CCRx toman un valor de 16 bits (de 0 a 65535). De esta forma, solamente hubo que multiplicar
+la lectura del potenciómetro por un factor de 16, y asignársela al registro del PWM.
+
+- Con esto, la intensidad del brillo del LED varía en función del potenciómetro, dado que cambia
+la energía total entregada por la señal PWM.
+
+------------------------------------------------------------------------------------------------
